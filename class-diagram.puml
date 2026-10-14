@@ -1,0 +1,16 @@
+@startuml
+class Main
+class StudentDao {
+  + createTable(): void
+  + insert(student): void
+  + findAll(): List<Student>
+  + findById(id): Optional<Student>
+  + update(student): boolean
+  + delete(id): boolean
+}
+class DatabaseConnection
+class Student
+Main --> StudentDao
+StudentDao ..> DatabaseConnection
+StudentDao ..> Student
+@enduml
